@@ -5353,9 +5353,9 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
-"load-script-async@git+https://git.maharshi.ninja/root/load-script-async.git":
+"load-script-async@https://git.maharshi.ninja/root/load-script-async/archive/master.tar.gz":
   version "1.0.0"
-  resolved "git+https://git.maharshi.ninja/root/load-script-async.git#fe375469e493a4203053b7b20d3e1cc308cf1974"
+  resolved "https://git.maharshi.ninja/root/load-script-async/archive/master.tar.gz#1b384ca97750f1759dab05badae62117d806c2ae"
 
 loader-fs-cache@^1.0.0:
   version "1.0.3"

@@ -15,7 +15,7 @@
     "fecha": "^4.2.1",
     "json5": "^2.2.0",
     "libbetterauth": "https://git.maharshi.ninja/root/libbetterauth/archive/master.tar.gz",
-    "load-script-async": "git+https://git.maharshi.ninja/root/load-script-async.git",
+    "load-script-async": "https://git.maharshi.ninja/root/load-script-async/archive/master.tar.gz",
     "lodash-es": "^4.17.21",
     "marked": "^2.0.7",
     "sass": "^1.32.12",
