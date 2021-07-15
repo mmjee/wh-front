@@ -1,0 +1,9 @@
+.wh-custom-link {
+  color: blue;
+}
+
+.v-application {
+  [class*='text-'],[class*='body-'],.v-card__title,.title {
+    font-weight: normal;
+  }
+}

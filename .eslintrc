@@ -1,0 +1,10 @@
+{
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@babel/eslint-parser"
+  },
+  "extends": "standard",
+  "rules": {
+    "no-debugger": 0
+  }
+}
