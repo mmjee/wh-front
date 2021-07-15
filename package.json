@@ -14,7 +14,7 @@
     "email-validator": "^2.0.4",
     "fecha": "^4.2.1",
     "json5": "^2.2.0",
-    "libbetterauth": "https://git.maharshi.ninja/root/libbetterauth/archive/bugfix/replace-json-with-msgpck.tar.gz",
+    "libbetterauth": "https://git.maharshi.ninja/root/libbetterauth/archive/master.tar.gz",
     "load-script-async": "git+https://git.maharshi.ninja/root/load-script-async.git",
     "lodash-es": "^4.17.21",
     "marked": "^2.0.7",

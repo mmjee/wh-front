@@ -5328,14 +5328,14 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-"libbetterauth@https://git.maharshi.ninja/root/libbetterauth/archive/bugfix/replace-json-with-msgpck.tar.gz":
+"libbetterauth@https://git.maharshi.ninja/root/libbetterauth/archive/master.tar.gz":
   version "0.0.1"
-  resolved "https://git.maharshi.ninja/root/libbetterauth/archive/bugfix/replace-json-with-msgpck.tar.gz#f0b28ada94a8ccf51e4d9ac37a0c7142c61c8d7f"
+  resolved "https://git.maharshi.ninja/root/libbetterauth/archive/master.tar.gz#0c103fb0ffa8f9c560d17b350e96c343a8cc8d55"
   dependencies:
     date-fns "^2.16.1"
     lodash.isstring "^4.0.1"
     lodash.omit "^4.5.0"
-    msgpackr "git+https://git.maharshi.ninja/root/msgpackr-without-exports.git"
+    msgpackr "^1.3.7"
     tweetnacl "^1.0.3"
 
 lines-and-columns@^1.1.6:
@@ -5798,7 +5798,7 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-msgpackr-extract@^1.0.11:
+msgpackr-extract@^1.0.13:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/msgpackr-extract/-/msgpackr-extract-1.0.13.tgz#39f1958d9cf1c436e18cc544aacec1af62b661d1"
   integrity sha512-JlQPllMLETiuQ5Vv3IAz+4uOpd1GZPOoCHv9P5ka5P5gkTssm/ejv0WwS4xAfB9B3vDwrExRwuU8v3HRQtJk2Q==
@@ -5806,11 +5806,12 @@ msgpackr-extract@^1.0.11:
     nan "^2.14.2"
     node-gyp-build "^4.2.3"
 
-"msgpackr@git+https://git.maharshi.ninja/root/msgpackr-without-exports.git":
-  version "1.3.4"
-  resolved "git+https://git.maharshi.ninja/root/msgpackr-without-exports.git#8846cfad059c9f8d34dd52136760469a0bcd92ef"
+msgpackr@^1.3.7:
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/msgpackr/-/msgpackr-1.3.7.tgz#1c14199c50cda973d2f10b6e4f4e004b2f772418"
+  integrity sha512-0fXsmwkr3L7+Nb+aTI96AIDfHlYP2OhBKaFbXGpo7rISv8RED7e14DkFxDKD+xT0MY8aud2xuh7E8KFv4uN73w==
   optionalDependencies:
-    msgpackr-extract "^1.0.11"
+    msgpackr-extract "^1.0.13"
 
 multicast-dns-service-types@^1.1.0:
   version "1.1.0"
