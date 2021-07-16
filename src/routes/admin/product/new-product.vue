@@ -9,6 +9,7 @@
     <v-textarea label="Description" v-model="lowerDescription" />
     <category-selector v-model="category" />
     <v-btn color="primary" :disabled="complete" @click="submit">Submit</v-btn>
+    <v-alert class="subtitle-1 mt-2" color="warning" v-if="error">{{ error }}</v-alert>
     <p v-if="complete">Product has been successfully created.</p>
   </v-form>
 </template>
@@ -34,6 +35,7 @@ export default {
       category: null,
 
       complete: false,
+      error: null,
       productTypeOptions: [
         {
           text: 'Automatically Delivered',
@@ -48,21 +50,26 @@ export default {
   },
   methods: {
     async submit () {
-      await this.$store.dispatch('user/makeSignedRequest', {
-        method: 'POST',
-        url: '/api/v1/admin-create-new-product',
-        data: {
-          name: this.name,
-          type: this.productType,
-          productPhoto: this.productPhoto,
-          price: this.price,
-          skuNo: this.skuNo,
-          upperTagline: this.upperTagline,
-          lowerDescription: this.lowerDescription,
-          category: this.category
-        }
-      })
-      this.complete = true
+      try {
+        await this.$store.dispatch('user/makeSignedRequest', {
+          method: 'POST',
+          url: '/api/v1/admin-create-new-product',
+          data: {
+            name: this.name,
+            type: this.productType,
+            productPhoto: this.productPhoto,
+            price: this.price,
+            skuNo: this.skuNo,
+            upperTagline: this.upperTagline,
+            lowerDescription: this.lowerDescription,
+            category: this.category
+          }
+        })
+        this.error = null
+        this.complete = true
+      } catch (e) {
+        this.error = e.res.data.errorDetails[0]
+      }
     }
   }
 }

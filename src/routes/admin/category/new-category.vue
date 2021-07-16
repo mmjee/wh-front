@@ -2,7 +2,8 @@
   <v-form>
     <v-text-field label="Category Name" v-model="categoryName" />
     <category-selector v-model="category" />
-    <v-btn color="primary" :disabled="complete" @click="submit">Submit</v-btn>
+    <v-btn color="primary" :loading="requestInProgress" :disabled="requestInProgress" @click="submit">Submit</v-btn>
+    <v-alert class="subtitle-1 mt-2" color="warning" v-if="error">{{ error }}</v-alert>
     <p v-if="complete">Category has been successfully created.</p>
   </v-form>
 </template>
@@ -21,20 +22,29 @@ export default {
       categoryName: '',
       category: null,
 
-      complete: false
+      requestInProgress: false,
+      complete: false,
+      error: null
     }
   },
   methods: {
     async submit () {
-      await this.$store.dispatch('user/makeSignedRequest', {
-        method: 'POST',
-        url: '/api/v1/admin-create-new-category',
-        data: {
-          categoryName: this.categoryName,
-          parentCategory: this.category
-        }
-      })
-      this.complete = true
+      try {
+        await this.$store.dispatch('user/makeSignedRequest', {
+          method: 'POST',
+          url: '/api/v1/admin-create-new-category',
+          data: {
+            categoryName: this.categoryName,
+            parentCategory: this.category
+          }
+        })
+        this.error = null
+        this.complete = true
+      } catch (e) {
+        this.error = e.res.data.errorDetails[0]
+      } finally {
+        this.requestInProgress = false
+      }
     }
   }
 }

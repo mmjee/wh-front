@@ -1,6 +1,5 @@
-
 <template>
-  <WarehouseSetup v-if="$store.state.global.globalConfig.needsInitialConfig === true" />
+  <WarehouseSetup v-if="$store.state.global.globalConfig.needsInitialConfig !== false" />
   <v-app v-else>
     <v-app-bar
         app
