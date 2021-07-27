@@ -12,3 +12,9 @@ export function humanizeStatusId (id) {
       throw new Error('How did this happen?')
   }
 }
+
+export function summarizeCartItems (items) {
+  return items.map(item => {
+    return '5 \u00D7 ' + item.product.name
+  }).join(', ')
+}

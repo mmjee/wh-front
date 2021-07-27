@@ -31,6 +31,10 @@ const routes = [
       {
         path: 'category/create',
         component: () => import(/* webpackChunkName: "adminPages" */ '@/routes/admin/category/new-category')
+      },
+      {
+        path: 'orders/list',
+        component: () => import(/* webpackChunkName: "adminPages" */ '@/routes/admin/list-orders')
       }
     ]
   },

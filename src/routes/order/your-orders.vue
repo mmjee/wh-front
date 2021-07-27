@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { humanizeStatusId } from '@/libwarehouse/utils'
+import { humanizeStatusId, summarizeCartItems } from '@/libwarehouse/utils'
 import { format } from 'fecha'
 
 export default {
@@ -55,9 +55,7 @@ export default {
       this.orders = odata.orders.map(o => {
         o.humanCreatedAt = format(new Date(o.createdAt), 'mediumDate')
         o.humanOrderStatus = humanizeStatusId(o.status)
-        o.humanCartItems = o.items.map(item => {
-          return '5 \u00D7 ' + item.product.name
-        }).join(', ')
+        o.humanCartItems = summarizeCartItems(o.items)
         return o
       })
     }

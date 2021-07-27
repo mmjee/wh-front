@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.$store.state.user.user.privilegeLevel < 3">
+  <div v-if="$store.state.user.user && $store.state.user.user.privilegeLevel < 3">
     <p>You are not authorized to be on this page.</p>
   </div>
   <v-container v-else>
@@ -34,6 +34,13 @@
           library_add
         </v-icon>
         Create New Category
+      </v-tab>
+      <v-divider class="my-4" />
+      <v-tab link to="/admin/orders/list">
+        <v-icon left>
+          payments
+        </v-icon>
+        Placed Orders
       </v-tab>
       <v-tabs-items>
         <router-view />
