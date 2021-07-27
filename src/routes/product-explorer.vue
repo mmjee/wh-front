@@ -57,7 +57,7 @@ export default {
     async loadData (firstInit = false) {
       const resp = await this.$store.dispatch('user/makeSignedRequest', {
         method: 'GET',
-        url: '/api/v1/get-top-20-products',
+        url: '/api/v1/list-products',
         params: this.$store.state.filterCfg.filterData.hasUserInput ? this.$store.state.filterCfg.filterData : undefined
       })
       if (firstInit) {
