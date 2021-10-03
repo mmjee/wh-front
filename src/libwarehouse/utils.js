@@ -18,3 +18,7 @@ export function summarizeCartItems (items) {
     return '5 \u00D7 ' + item.product.name
   }).join(', ')
 }
+
+export function humanizeQuantity (quantity) {
+  return quantity === -1 ? '\u221E' : quantity
+}

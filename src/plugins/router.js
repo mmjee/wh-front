@@ -29,6 +29,10 @@ const routes = [
         component: () => import(/* webpackChunkName: "adminPages" */ '@/routes/admin/product/add-codes-to-product')
       },
       {
+        path: 'product/info-table',
+        component: () => import(/* webpackChunkName: "adminPages" */ '@/routes/admin/product/products-and-inventory')
+      },
+      {
         path: 'category/create',
         component: () => import(/* webpackChunkName: "adminPages" */ '@/routes/admin/category/new-category')
       },

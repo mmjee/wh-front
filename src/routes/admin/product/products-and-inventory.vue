@@ -1,36 +1,40 @@
 <template>
   <v-progress-linear indeterminate v-if="loaded === false" />
   <v-data-table
-    v-else
-    :headers="headers"
-    :items="data.orders"
+      v-else
+      :headers="headers"
+      :items="data.products"
   />
 </template>
 
 <script>
-import { summarizeCartItems } from '@/libwarehouse/utils'
+import { humanizeQuantity } from '@/libwarehouse/utils'
 
 export default {
-  name: 'ListOrders',
+  name: 'AdminProductsAndInventoryTable',
   data: () => ({
     loaded: false,
     data: null,
     headers: [
       {
-        text: 'Email',
-        value: 'orderCreator.email'
+        text: 'Name',
+        value: 'name'
       },
       {
-        text: 'Status',
-        value: 'status'
+        text: 'Tagline',
+        value: 'upperTagline'
       },
       {
-        text: 'Amount in 1/100 of your Currency',
-        value: 'total'
+        text: 'SKU',
+        value: 'skuNo'
       },
       {
-        text: 'Items',
-        value: 'humanCartItems'
+        text: 'Price',
+        value: 'price'
+      },
+      {
+        text: 'Quantity',
+        value: 'humanQuantity'
       }
     ]
   }),
@@ -39,10 +43,10 @@ export default {
       try {
         this.data = await this.$store.dispatch('user/makeSignedRequest', {
           method: 'GET',
-          url: '/api/v1/admin-get-all-orders'
+          url: '/api/v1/admin-get-all-products'
         })
-        this.data.orders.forEach((od) => {
-          od.humanCartItems = summarizeCartItems(od.items)
+        this.data.products.forEach(prod => {
+          prod.humanQuantity = humanizeQuantity(prod.quantity)
         })
       } catch (e) {
       } finally {

@@ -42,6 +42,12 @@
         </v-icon>
         Placed Orders
       </v-tab>
+      <v-tab link to="/admin/product/info-table">
+        <v-icon left>
+          inventory_2
+        </v-icon>
+        Products and Inventory
+      </v-tab>
       <v-tabs-items>
         <router-view />
       </v-tabs-items>
