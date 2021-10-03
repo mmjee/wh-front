@@ -84,7 +84,7 @@
         </v-list-item-content>
       </v-list-item>
 
-      <v-list-item link to="/my/orders">
+      <v-list-item link to="/my/orders" v-if="$store.state.user.isAuthenticated">
         <v-list-item-icon>
           <v-icon>inventory</v-icon>
         </v-list-item-icon>
